@@ -1,0 +1,11 @@
+Category,Item,Description,Price
+Coffee,Espresso,"A strong shot of coffee.",2.50
+Coffee,Latte,"Espresso with steamed milk and a thin layer of foam.",4.00
+Coffee,Cappuccino,"Espresso with steamed milk and a thick layer of foam.",4.25
+Coffee,Americano,"Espresso with hot water.",3.50
+Tea,Green Tea,"A refreshing green tea.",3.00
+Tea,Black Tea,"A classic black tea.",3.00
+Pastries,Croissant,"A buttery, flaky pastry.",3.50
+Pastries,Muffin,"A sweet baked muffin (flavor varies).",3.75
+Sandwiches,Turkey Club,"Turkey, bacon, lettuce, tomato, and mayo on toast.",7.50
+Food,Soup of the Day,"Chef's daily creation.",5.00
