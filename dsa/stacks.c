@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX 100
+#define MAX 2
 int top=-1;
 int stack_arr[MAX];
 void creation() {
@@ -32,7 +32,7 @@ void creation() {
 
 void push() {
 	if(top==MAX-1) {
-		printf("the array is full nigga");
+		printf("the stack is full nigga\n");
 		return;
 	}
 	int value;
@@ -53,8 +53,18 @@ void pop() {
 }
 int main() {
 	int choice;
-	creation();
+// 	creation();
 	push();
-
+	push();
+	push();
+	push();
+	for(int i=top;i>=0;i--){
+        printf("|%d|\n",stack_arr[i]);
+    }
+    pop();
+    for(int i=top;i>=0;i--){
+        printf("|%d|\n",stack_arr[i]);
+    }
+    return 0;
 
 }
