@@ -3,7 +3,6 @@
 struct node {
 	int data;
 	struct node *link;
-	struct node *revlink;
 
 };
 struct node *head=NULL;
@@ -23,7 +22,6 @@ void creation(){
             ptr = head;
         } else {
             ptr->link = current;
-            current->revlink=ptr;
 
             ptr = current;
         }
@@ -50,8 +48,9 @@ void traverse(){
 void insert(){
     int choice,pos;
     struct node *ptr=NULL;
+    struct node *printer;
 
-    printf("enter 1 to insert at starting\nenter 2 to insert at end\n3 for other than above cases");
+    printf("\nenter 1 to insert at starting\nenter 2 to insert at end\n3 for other than above cases");
     scanf("%d",&choice);
     if(choice==1)
                 {
@@ -63,7 +62,7 @@ void insert(){
                     head=start;
                     
                 }
-    else if(choice==2){
+    if(choice==2){
                     struct node *end=(struct node *)malloc(sizeof(struct node));
                     printf("enter element :- ");
                     scanf("%d",&end->data);
@@ -74,11 +73,11 @@ void insert(){
                     ptr->link=end;
                     end->link=NULL;
     }
-    else if(choice==3){
+    if(choice==3){
                     struct node *midd=(struct node *)malloc(sizeof(struct node));
                     printf("enter element :- ");
                     scanf("%d",&midd->data);
-                    printf("enter position :- ");
+                    printf("enter index position (insertion will be done after the index position) :- ");
                     scanf("%d",&pos);
                     ptr=head;
                     for (int i = 0; i < pos; i++)
@@ -89,11 +88,19 @@ void insert(){
                     ptr->link=midd;
 
     }
+    printer=head;
+    while(printer!=NULL){
+        printf("%d->",printer->data);
+        printer=printer->link;
+    }
+    printf("NULL");
+
 }
 void delete(){
                 int pos;
+                struct node *printer;
                 struct node *delete;
-                printf("enter position of deletion \n 1 for start position\n 2 for end positon \n 3 for neither of the above case");
+                printf("\nenter position of deletion \n 1 for start position\n 2 for end positon \n 3 for neither of the above case");
                 scanf("%d",&pos);
     if(pos==1){
                 struct node *delete=head;
@@ -115,7 +122,7 @@ void delete(){
                 int n;
                 struct node *delete=head;
                 struct node *temp;
-                printf("enter the position of deletion");
+                printf("enter the position of deletion (the deletion is done before the index position)");
                 scanf("%d",&n);
                 if(n==1){
                     temp=head;
@@ -136,13 +143,19 @@ void delete(){
                 delete->link=delete->link->link;
                 free(temp); 
     }
+    printer=head;
+    while(printer!=NULL){
+        printf("%d->",printer->data);
+        printer=printer->link;
+    }
+    printf("NULL");
 
 }
 int main() {
     creation();
     traverse();
 	insert();
-	// printf("%d",current->data);
+	delete();
 	return 0;
 }
     
