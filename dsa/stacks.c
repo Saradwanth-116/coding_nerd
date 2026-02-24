@@ -1,5 +1,3 @@
-//please notice in reverse manner 
-
 #include <stdio.h>
 #define MAX 2
 int top=-1;
@@ -70,4 +68,5 @@ int main() {
     return 0;
 
 }
+
 
